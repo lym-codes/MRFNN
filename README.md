@@ -17,4 +17,5 @@
 
 ## Getting Started
 The project relies on several open-source libraries. You can find the full list in the requirements.txt file.
+```bash
 pip install -r requirement.txt
