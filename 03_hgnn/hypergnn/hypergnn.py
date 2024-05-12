@@ -138,7 +138,7 @@ class RiskGNN(nn.Module):
         # 04 lstm
         self.event_vec_input=1
         self.event_vec_ouput=1
-        self.eventlstm= LSTMModel(1,8,1) #inupt;hidden;output
+        self.eventlstm= LSTMModel(1,7,1) #inupt;hidden;output
         # 05 gru
         self.eventgru = GRUModel(1, 8, 1)  # inupt;hidden;output
 
@@ -184,8 +184,8 @@ class RiskGNN(nn.Module):
         # 5. 三阶拼接
         event_emb_input=self.event_vec_input
         event_emb_output=self.event_vec_ouput
-        # event_vec=self.eventlstm(risk_event[:, :, :event_emb_input])
-        event_vec = self.eventgru(risk_event[:, :, :event_emb_input])
+        event_vec=self.eventlstm(risk_event[:, :, :event_emb_input])
+        # event_vec = self.eventgru(risk_event[:, :, :event_emb_input])
         event_vec_final = torch.zeros((self.company_num, event_emb_output))
         event_vec_final[id_index] = event_vec  # 完整部分
         third_mer=torch.cat((sec_mer, event_vec_final), dim=1)
