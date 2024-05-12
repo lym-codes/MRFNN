@@ -72,7 +72,7 @@ parser.add_argument('--weight_decay', type=float, default=1e-4,
 '''
   02 数据集划分
 '''
-year = '2018'
+year = '2019'
 fin_file = './00_basic_data/02_basic/' + year + '.xlsx'
 alldata = pd.read_excel(fin_file)  # 带风险特征与利益社区特征
 alldata['证券代码'] = alldata['证券代码'].astype(str).str.zfill(6)
