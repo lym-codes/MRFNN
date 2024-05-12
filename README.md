@@ -1,2 +1,2 @@
 # MRFNN
-For environment configuration, please refer to requirement.txt
+For environment configuration, please refer to requirements.txt
